@@ -34,7 +34,7 @@ release:
 # Python targets
 py_install:
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+	pip install -r requirements.txt
 
 py_test:
 	python3 -m pytest -vv --cov=main test_*.py
