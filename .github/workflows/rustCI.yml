@@ -1,0 +1,52 @@
+name: Rust CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+          toolchain: stable
+          profile: minimal
+          components: clippy, rustfmt
+          override: true
+
+    - name: Update Linux
+      run: sudo apt update 
+
+    - name: Update Rust
+      run: make install
+
+    - name: Check Rust versions
+      run: make rust-version
+
+    - name: Format code
+      run: make format
+
+    - name: Lint code
+      run: make lint
+
+    - name: Run tests
+      run: make test
+
+    - name: Pull latest changes
+      run: git pull
+      
+
+          
+    - name: Generate and push logs
+      run: make generate_and_push

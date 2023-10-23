@@ -1,13 +1,16 @@
 [package]
-name = "alicia_xia_sqlite"
+name = "mini_project8_rust"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-reqwest = { version = "^0.11", features = ["blocking"] }
-rusqlite = "^0.29"
-csv = "^1.0"
-assert_cmd = "^2.0"
-predicates = "0.9"
+csv = "1.1"
+rusqlite = "0.24"
+statrs = "0.14"
+reqwest = { version = "0.11", features = ["blocking"] }
+sys-info = "0.7"
+
+[dev-dependencies]
+pretty_assertions = "0.7"
