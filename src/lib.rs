@@ -101,16 +101,7 @@ pub fn query(query: &str) -> Result<()> {
 
         for result in results {
             match result {
-                Ok((
-                    id,
-                    intent,
-                    age,
-                    year,
-                    race,
-                    place,
-                    month,
-                    education,
-                )) => {
+                Ok((id, intent, age, year, race, place, month, education)) => {
                     println!(
                         "Result: id={}, intent={}, age={}, year={}, race={}, place={}, month={}, education={}",
                         id, intent, age, year, race, place, month, education
