@@ -8,8 +8,17 @@ Swap a Python Script in Rust and compare their performance on running time, memo
 
 ---
 
-**Result**
+**file**
 
+Original Python code in the following files:
+* main.py
+* test_main.py
+Rust code in the following files:
+* src\main.rs
+* src\lib.py
+These files enable the creation of a simple dataset and the calculation of its descriptive statistics in Pyhton and Rust
 
+---
 
+Compars
 

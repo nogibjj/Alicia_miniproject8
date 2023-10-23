@@ -5,17 +5,17 @@ import psutil
 
 def test_loaddata():
     #load iris dataset
-    path = 'full_data.csv'
+    path = 'vehicles.csv'
     iris_df = load_data(path)
     assert isinstance(iris_df, pd.DataFrame)
     assert not iris_df.empty
 
 def test_descriptive_stats():
-    path = 'full_data.csv'
-    gun_df = load_data(path) 
-    statistics = get_data_descriptive_stats(gun_df,'age')
+    path = 'vehicles.csv'
+    vehicles_df = load_data(path) 
+    statistics = get_data_descriptive_stats(vehicles_df,'Acceleration')
     #print(statistics['Mean'])
-    assert statistics['Mean'] == 43.85760071442746
+    assert statistics['Mean'] == 15.519704433497537
 
 def test():
     start = time.time()

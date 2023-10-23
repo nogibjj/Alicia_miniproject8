@@ -8,7 +8,7 @@ use std::time::Instant;
 fn main() -> Result<(), Box<dyn Error>> {
     let start_time = Instant::now();
     // 1. Read the cars.csv file
-    let file = File::open("full_data.csv")?;
+    let file = File::open("vehicles.csv")?;
 
     // Create the CSV reader with the specified delimiter
     let mut rdr = ReaderBuilder::new()
@@ -18,24 +18,24 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // Find the index of first
     let headers = rdr.headers()?;
-    let age_index = headers
+    let weight_index = headers
         .iter()
-        .position(|h| h == "age")
-        .ok_or("age column not found")?;
+        .position(|h| h == "Weight")
+        .ok_or("Weight column not found")?;
 
     // 2. Extract the "Weight" column from the CSV data
-    let mut ages: Vec<f64> = Vec::new();
+    let mut weights: Vec<f64> = Vec::new();
     for result in rdr.records() {
         let record = result?;
-        if let Some(age_str) = record.get(age_index) {
-            if let Ok(age) = age_str.parse::<f64>() {
-                ages.push(age);
+        if let Some(weight_str) = record.get(weight_index) {
+            if let Ok(weight) = weight_str.parse::<f64>() {
+                weights.push(weight);
             }
         }
     }
 
     // 3. Compute the statistics
-    let stats = lib::compute_statistics(&ages);
+    let stats = lib::compute_statistics(&weights);
     println!("Mean: {}", stats.mean);
     println!("Median: {}", stats.median);
     println!("Standard Deviation: {}", stats.std);
