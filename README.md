@@ -1,3 +1,15 @@
-# Alicia Xia Week 8 Individual
-## Project Summary: Data Extraction, Transformation, Loading (ETL) and Querying Tool
-I use rust to CRUD my dataset with help of copilot but manually corrected it to avoid the syntex and sematic error.
+# Alicia Xia Week 8 miniproject
+---
+[![Rust CI/CD](https://github.com/nogibjj/Alicia_miniproject8/actions/workflows/rustCI.yml/badge.svg)](https://github.com/nogibjj/Alicia_miniproject8/actions/workflows/rustCI.yml)
+---
+**Goal**
+
+Swap a Python Script in Rust and compare their performance on running time, memory usage and CPU usage.
+
+---
+
+**Result**
+
+
+
+

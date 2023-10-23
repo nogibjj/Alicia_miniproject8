@@ -33,6 +33,7 @@ release:
 
 # Python targets
 py_install:
+	python3 get-pip.py
 	pip install --upgrade pip &&\
 	pip install -r requirements.txt
 
